@@ -1,6 +1,18 @@
 function to_roman (num) {
-  // your implementation code here
-}
+  let roman = [["","I","II","III","IV","V","VI","VII","VIII","IX"],
+              ["","X","XX","XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"],
+              ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM"],
+              ["","M","MM","MMM","MMMM"]];
+  let nomer = '';
+  let str = num.toString().split('').reverse();
+  // console.log(str);
+              // console.log(roman[1][4])
+  for (var i = 0; i < str.length; i++) {
+    // console.log(roman[i])
+    nomer = roman[i][Number(str[i])] + nomer;
+  }
+  return nomer;
+  }
 
 // Drive code
 console.log('My totally sweet testing script for new roman\n')
