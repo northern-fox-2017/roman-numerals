@@ -1,8 +1,63 @@
 function to_roman (num) {
-  // your implementation code here
+
+    let hasil =''
+
+    while(num >= 1000){
+        hasil += 'M'
+        num -= 1000
+    }
+    if(num >= 900){
+        hasil += 'CM'
+        num -= 900
+    }
+    if(num >= 500){
+        hasil += 'D'
+        num -= 500
+    }
+    if(num >= 400){
+        hasil += 'CD'
+        num -= 400
+    }
+    while(num >= 100){
+        hasil += 'C'
+        num -= 100
+    }
+    if(num >= 90){
+        hasil += 'XC'
+        num -= 90
+    }
+    if(num >= 50){
+        hasil += 'L'
+        num -= 50
+    }
+    if(num >= 40){
+        hasil += 'XL'
+        num -= 40
+    }
+    while(num >= 10){
+        hasil += 'X'
+        num -= 10
+    }
+    if(num >= 9){
+        hasil += 'IX'
+        num -= 9
+    }
+    if(num >= 5){
+        hasil += 'V'
+        num -= 5
+    }
+    if(num >= 4){
+        hasil += 'IV'
+        num -= 4
+    }
+    else{
+        for(let i = 0; i < num; i++){
+            hasil += 'I'
+        }
+    }
+    return hasil
 }
 
-// Drive code
 console.log('My totally sweet testing script for new roman\n')
 console.log('input | expected | actual')
 console.log('——————|——————————|———————')
