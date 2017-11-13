@@ -1,5 +1,24 @@
-function to_roman (num) {
-  // your implementation code here
+const romanNumerals = {
+  'M': 1000, 'CM': 900,
+  'D': 500, 'CD': 400,
+  'C': 100, 'XC': 90,
+  'L': 50, 'XL': 40,
+  'X': 10, 'IX': 9,
+  'V': 5, 'IV': 4,
+  'I': 1
+};
+
+const to_roman = (num) => {
+  let result = '';
+
+  for (const roman in romanNumerals) {
+    while (num >= romanNumerals[roman]) {
+      result += roman;
+      num -= romanNumerals[roman];
+    }
+  }
+
+  return result;
 }
 
 // Drive code
