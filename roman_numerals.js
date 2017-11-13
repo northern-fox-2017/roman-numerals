@@ -1,5 +1,19 @@
 function to_roman (num) {
   // your implementation code here
+  var romanNum = '';
+  var specialNum = [1,4,5,9,10,40,50,90,100,400,500,900,1000]
+  var specialChar = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD','D', 'XM', 'M']
+  i = specialNum.length - 1;
+  while (i >= 0 ){
+    while (num / specialNum[i] >= 1) {
+
+      romanNum += specialChar[i];
+      num = num - specialNum[i];
+    }
+    i--;
+  }
+return romanNum;
+
 }
 
 // Drive code
