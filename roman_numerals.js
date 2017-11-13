@@ -1,5 +1,38 @@
 function to_roman (num) {
   // your implementation code here
+  let numArabic = [1,4,5,9,10,40,50,90,100,400,500,900,1000]
+  let numRomawi = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'XC', 'C', 'CD', 'D', 'CM', 'M']
+  // while(num <= 0){
+  var delta = num
+  let romaw = ''
+  //let index = 0
+  while(delta > 0){
+    for(let i = 0; i < numArabic.length; i++){
+      if( numArabic[i+1] > delta){
+        if(delta / numArabic[i] === 1){
+          romaw += numRomawi[i]
+          delta -= numArabic[i]
+          return romaw
+        }
+      }
+      if(i < numArabic.length-1){
+        if( numArabic[i+1] > delta){
+          if( delta % numArabic[i] == delta - numArabic[i]){
+            romaw += numRomawi[i]
+            delta -= numArabic[i]
+          }
+          if(delta > 1 && delta < 4){
+            romaw += numRomawi[0]
+            delta-=numArabic[0]
+          }
+        }
+      }
+      if(i == numArabic.length-1 && delta > numArabic[i]){
+        romaw += numRomawi[i]
+        delta -= numArabic[i]
+      }
+    }
+  }
 }
 
 // Drive code
