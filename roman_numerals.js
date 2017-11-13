@@ -3,14 +3,13 @@ function to_roman (num) {
   let arrRoman = ['M','D','CD','C','XC','L','XL','X','IX','V','IV','I']
 	let arrLatin = [1000,500,400,100,90,50,40,10,9,5,4,1]
   let hasil = ''
-	
-	for(var i = 0; i < arrRoman.length; i++){
-		while(num >= arrLatin[i]){
-			hasil += arrRoman[i]
-			num -= arrLatin[i]
-		}
+
+  for (var i = 0; i < arrRoman.length; i++) {
+    while (num >= arrLatin[i]) {
+      hasil += arrRoman[i]
+      num -= arrLatin[i]
+    }
   }
-  
   return hasil
 }
 
