@@ -1,5 +1,21 @@
 function to_roman (num) {
   // your implementation code here
+  let arrAngka = [1000,900,500,400,100,90,50,40,10,9,5,4,1];
+  let arrRomawi = ['M','CM','D','CD','C','XC','L','XL','X','IX','V','IV','I'];
+
+
+  let roman = ""
+  for(var i = 0; i < arrAngka.length; i++){
+    if(num <= 0){
+      return roman
+    }
+    else if(num >= arrAngka[i]){
+      // console.log(arrRomawi[i])
+      roman += arrRomawi[i]
+      // console.log(roman)
+      return roman + to_roman(num - arrAngka[i])
+    }
+  }
 }
 
 // Drive code
