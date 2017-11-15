@@ -1,6 +1,31 @@
+var arabic = [1000, 500, 400, 100, 50, 40, 10, 9, 5, 4, 1];
+var roman = ['M','D','CD','C','L','XL','X','IX','V','IV','I'];
+
 function to_roman (num) {
   // your implementation code here
+  var arabic = [1000, 500, 400, 100, 50, 40, 10, 9, 5, 4, 1];
+  var roman = ['M','D','CD','C','L','XL','X','IX','V','IV','I'];
+  var satuan='';
+
+for (var i = 0; i < arabic.length; i++) {
+  while(num >= arabic[i]){
+    satuan += roman[i]
+    num -= arabic[i]
+  }
 }
+return satuan
+}
+
+function convertObj() {
+  let objRoman = [];
+  for(var j = 10; j >= 0; j--) {
+    let obj = {};
+    obj[roman[j]] = arabic[j]
+    objRoman.push(obj)
+  }
+  return objRoman
+}
+console.log(convertObj());
 
 // Drive code
 console.log('My totally sweet testing script for new roman\n')
