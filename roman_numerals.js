@@ -1,5 +1,19 @@
 function to_roman (num) {
-  // your implementation code here
+  var arabic = ['I','IV','V','IX','X','XL','L','XC','C','CD','CM','D','M'];
+  var roman = [1,4,5,9,10,40,50,90,100,400,500,900,1000];
+	var arr = [];
+	debugger
+	for(let i = arabic.length -1; i >= 0; i--){
+
+		while(num >= roman[i]){
+			arr.push(arabic[i]);
+	  		num = num - roman[i];
+		}
+	  	
+	}
+	
+	join = arr.join('');
+	return join;
 }
 
 // Drive code
