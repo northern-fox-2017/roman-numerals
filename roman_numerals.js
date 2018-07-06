@@ -1,5 +1,16 @@
 function to_roman (num) {
-  // your implementation code here
+  let result = '';
+  let number = [1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000];
+  let specialRom = ['I', 'IV', 'V', 'IX', 'X', 'XL', 'L', 'LC', 'C', 'CD', 'D', 'DM', 'M'];
+
+  for(var i = number.length-1; i >= 0; i--) {
+    while(num >= number[i]) {
+      result += specialRom[i];
+      num -= number[i];
+    }
+  }
+
+  return result;
 }
 
 // Drive code
